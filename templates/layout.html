@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="description" content="" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <title>FR</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='app.js')}}"></script>
+    </head>
+
+    <body>
+        <button id = "dark" type="button" onclick="darkMode()">🌓</button>
+        <input type="hidden" id="balanced-url" value="{{ url_for('balanced') }}">
+        <input type="hidden" id="start-url" value="{{ url_for('start') }}">
+        <input type="hidden" id="mode-url" value="{{ url_for('mode') }}">
+        <input type="hidden" id="oracle-url" value="{{ url_for('oracle_result') }}">
+        <input type="hidden" id="index-url" value="{{ url_for('index') }}">
+        <input type="hidden" id="custom-url" value="{{ url_for('custom') }}">
+        <input type="hidden" id="search-url" value="{{ url_for('select') }}">
+        <input type="hidden" id="custom_oracle-url" value="{{ url_for('oracle') }}">
+        <input type="hidden" id="leaderboard-url" value="{{ url_for('leaderboard') }}">
+
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

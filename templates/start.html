@@ -1,0 +1,15 @@
+{% extends "layout.html"%}
+
+{% block body%}
+    <h1>{{ start }}→{{ end }}</h1>
+
+    <button id="mode">Start Over</button>
+    <button onclick="alert('This is the last team {{ end }} has played for: {{ help }}')">Help</button>
+    <button id="menu">Menu</button>
+
+    <form action="/team" method="post">
+        {% for team in teams %}
+            <input class="teams" type="submit" name="team" value="{{ team[0] }} {{ team[1] }}-{{ team[1]+1 }}"><br>
+        {% endfor %}
+    </form>
+{% endblock %}

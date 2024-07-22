@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body%}
+<h1>{{ start }}→{{ end }}</h1>
+<!--<input type="text" id="myInput" onkeyup="search()" placeholder="Will be implemented soon...">!-->
+<button id="mode">Start Over</button>
+<button onclick="alert('This is the last team {{ end }} has played for: {{ help }}')">Help</button>
+<button id="menu">Menu</button>
+<div class="grid-container">
+    {% for player in players %}
+        <form action="/player" method="post" class="grid-item">
+            <input type="hidden" name="player_id" value="{{ player[0] }}">
+            <input class="{{ player[1]|replace(' ', '-')|lower }}" type="submit" name="player" value="{{ player[1] }} | {{ player[2] }} | {{ player[3] }} | {{ player[4] }}">
+        </form>
+    {% endfor %}
+</div>
+</form>
+{% endblock %}
+

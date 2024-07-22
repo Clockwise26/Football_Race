@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>Select your {{ custom_player_state  }} player</h2>
+<form action="/select" method="post" >
+<input type="text" name="player_choice" placeholder="Leave empty for a random search">
+<input class="search" style="width:100px" type="submit" id="search" value="search">
+</form>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>FOOTBALL RACE</h1>
+<h3>How to play:</h3>
+<p>In this game, you will be given a starting player and a final player, and the teams the first has played for.
+   Your goal is to get from the first to the second. Everytime you click on a player, you will see their teams. When you click on a team, you will see that year's roster.
+   You can also click on the <em>help</em> button at any time to see the target player's latest team. Click on start to play, have fun!</p>
+<button id="mode">Start Race</button>
+<button id="custom_oracle">See a custom path</button>
+<button id="oracle">See a random path</button>
+<br>
+<h6>Note that the players currently present in the database are those that appeared in: Premier League 1992-2024, Championship 2002-2024, Serie A 1992-2024, Serie B 2002-2024, La Liga 1992-2024, Bundesliga 1992-2024, Ligue 1 1992-2024, Eredivisie 2002-2024, Liga NOS 2002-2024 </h6>
+
+<div id="daily">
+    <h1>Play the daily challenge!</h1>
+    <form action="/daily">
+        <input id="daily_start" type="submit" name="daily_start" value="{{ start_daily }}→{{ end_daily }}">
+    </form>
+</div>
+{% endblock %}

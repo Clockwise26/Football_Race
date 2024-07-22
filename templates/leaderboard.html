@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    color: black;
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #8f8787;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .score-row{
+    background-color:bisque;
+  }
+  </style>
+  
+<script>
+function toggleScore(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "table-row";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<table>
+  <tr>
+      <th>Username</th>
+      <th>Steps</th>
+      <th>Route</th>
+  </tr>
+  {% for score in scores %}
+  <tr>
+    <td>{{ score[0] }}</td>
+    <td>{{ score[1] }}</td>
+    <td><button onclick="toggleScore('{{ score[0] }}')">Show Route</button></td>
+  </tr>
+  <tr id="{{ score[0] }}" class="score-row" style="display: none;">
+    <td colspan="3">{{ score[2] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<button id="menu">Menu</button>
+{% endblock %}
+
+

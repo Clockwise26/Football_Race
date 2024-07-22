@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+    {% block body %}
+    <h1>You have gotten it in {{ steps }} steps!</h1>
+    {% for step in route %}
+    {% if loop.last %}
+        <span style="font-weight: bold;">{{ step }}</span>
+    {% elif loop.index % 2 == 0 %}
+        <span>{{ step }} → </span>
+    {% else %}
+        <span style="font-weight: bold;">{{ step }} → </span>
+    {% endif %}
+    {% endfor %}
+    <br>
+    <button id="menu">Menu</button>
+    <button id="mode">Start Over</button>
+    {% if daily %}
+    {% if not saved %}
+    <h2 style="margin-top: 8%;">Do you want to save your score to the leaderboard? Type your name below and click save!</h2>
+    <br>
+    <form id="saveForm" action="/save" method="post">
+        <input id="username" name="username" type="text"> <br>
+        <button id="save" action="/save">Save</button>
+    </form>
+    {% else %}
+        <button id="leaderboard">See the leaderboard!</button>
+    {% endif %}
+    {% endif %}
+{% endblock %}

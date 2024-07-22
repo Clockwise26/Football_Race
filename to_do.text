@@ -1,0 +1,14 @@
+avoid double clicking while loading which causes errors, and cache results to make them faster
+daily challenge with leaderboard
+
+
+find solutions to the dark mode flashing bug
+done, but to do again if i update the database - do the ad-hoc scraping for players with "none" as role and update their role
+add indexes and views for faster database selection
+add a search list for players
+keep thinking about balance
+Add a restart from the first person (with player, not start, otherwise steps go back to 0) maybe signed as "go back to {{player}}"
+add button to restart with same mode
+get database down to the 90s
+add multiplayer? (will never do, would need to learn a whole new sector i know nothing about)
+

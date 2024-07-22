@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: rgb(1, 62, 102); /* dark mode */
+    }
+  }
+
+h1 {
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h3 {
+    color: #666;
+    margin-left: 10px;
+}
+
+p {
+    color: #333;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+h6 {
+    color: #333
+}
+
+input[type="text"] {
+    width:100%;
+    display: block;
+    margin: 10px auto;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+input[type="submit"]:hover {
+    background-color: #007BFF;
+
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+button:hover {
+    background-color: #1e7e34;
+}
+
+input[type="submit"]{
+    display: flex;
+    flex-direction: column;
+    padding: 2%; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 1em; /* Increase the font-size */
+    border: none;
+    color: white;
+    cursor: pointer;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+li{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 10px;
+}
+
+.grid-item {
+  border: none;
+  padding: none;
+}
+
+.goalkeeper {
+    background-color: black;
+}
+
+.centre-back ,.defender {
+    background-color: #735807;
+}
+
+.right-back, .left-back {
+    background-color: red;
+}
+
+.defensive-midfield, .central-midfield, .attacking-midfield, .left-midfield, .right-midfield, .midfield{
+     background-color: #2d7307;
+}
+
+.centre-forward, .left-winger, .right-winger, .second-striker, .attack
+{
+    background-color: #1b65ce;
+}
+
+.sweeper{
+    background-color: #401087;
+}
+
+.player, .none
+{
+    background-color: #0056b3;
+}
+
+.teams {
+        background-color:#f5aa42;
+}
+
+.search{
+    height:20px;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+#dark {
+    background-color: #989898;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    padding: 0px 0px;
+    border: none;
+    border-radius: 12px;
+}
+
+#daily_start {
+    font-size:larger;
+    font-family: Verdana;
+    background-color: rgb(1, 62, 102);
+    width: 30%;
+}
+
+#username {
+    padding: 20px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: text;
+    width:50%;
+    margin: auto;
+}
+
+#save {
+    margin-top: 10px;
+    margin-left: 0px;
+    width: auto;
+}
+
+#leaderboard {
+    margin-top: 10px;
+    margin-left: 0px;
+    width: auto;
+}
+
+#saveForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Add this line */
+}

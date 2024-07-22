@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>Select your {{ start_or_end }} player</h2>
+<form action="/select" method="post">
+    <input type="text" name="player_choice" placeholder="player">
+    <input class="search" style="width:100px" type="submit" id="search" value="search">
+</form>
+{% if result %}
+{% for player in result %}
+<form class = "pick" action="/player_select" method='post'>
+<input type="hidden" name="player_id" value="{{ player[0] }}">
+<input id="players" class="{{ player[1]|replace(' ', '-')|lower }}" type="submit" name="player_choice" value="{{ player[1] }} | {{ player[2] }} | {{ player[3] }} | {{ player[4] }}">
+</form>
+{% endfor %}
+{% else %}
+<h4>No player with such name found, please check your spelling and try again</h4>
+{% endif %}
+{% endblock %}

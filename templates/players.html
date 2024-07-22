@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h1>{{ start }}→{{ end }}</h1>
+    
+    <button id="mode">Start Over</button>
+    <button onclick="alert('This is the last team {{ end }} has played for: {{ help }}')">Help</button>
+    <button id="menu">Menu</button>
+
+    <form action="/team" method="post">
+    {% for step in route %}
+    {% if loop.last %}
+        <span>{{ step }}</span>
+    {% elif loop.index % 2 == 0 %}
+        <span>{{ step }} → </span>
+    {% else %}
+        <span style="font-weight: bold;">{{ step }} → </span>
+    {% endif %}
+    {% endfor %}
+    </form>
+{% endblock %}
